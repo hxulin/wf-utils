@@ -8,13 +8,13 @@
   ],
   "scripts": {
     "build": "npm run clean && run-p build:*",
-    "clean": "rimraf dist/cjs/* dist/mjs/*",
+    "clean": "shx rm -rf dist && shx mkdir -p dist/cjs && shx mkdir dist/mjs",
     "build:cjs": "tsc --build tsconfig.cjs.json",
     "build:mjs": "tsc --build tsconfig.mjs.json"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2",
+    "shx": "^0.3.3",
     "typescript": "^4.1.3"
   },
   "repository": "git+https://github.com/hxulin/wf-utils.git",
