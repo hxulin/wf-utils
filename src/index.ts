@@ -1,5 +1,5 @@
 // 版本
-export const version: string = '0.0.3'
+export const version: string = '0.0.4'
 
 // 文件处理相关
 export * from './FileUtils'
