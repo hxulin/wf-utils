@@ -1,15 +1,16 @@
 {
   "name": "wf-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "npm run clean && run-p build:*",
     "clean": "shx rm -rf dist && shx mkdir -p dist/cjs && shx mkdir dist/mjs",
-    "build:cjs": "tsc --build tsconfig.cjs.json",
+    "build:cjs": "tsc --build tsconfig.cjs.json && shx mv dist/cjs/*.d.ts dist",
     "build:mjs": "tsc --build tsconfig.mjs.json"
   },
   "devDependencies": {
