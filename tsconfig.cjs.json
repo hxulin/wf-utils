@@ -3,7 +3,9 @@
     "target": "es6",
     "outDir": "./dist/cjs",
     "module": "commonjs",
-    "declaration": true
+    "declaration": true,
+    "moduleResolution": "node",
+    "allowJs": true
   },
   "include": [
     "src"

@@ -1,5 +1,5 @@
 // 版本
-export const version: string = '0.0.4'
+export const version: string = '0.0.5'
 
 // 文件处理相关
 export * from './FileUtils'
@@ -7,5 +7,8 @@ export * from './FileUtils'
 // 路径处理相关
 export * from './PathUtils'
 
-// 字符串相关处理
+// 字符串处理相关
 export * from './StringUtils'
+
+// AES 加解密
+export * from './AESUtils'

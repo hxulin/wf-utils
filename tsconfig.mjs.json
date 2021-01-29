@@ -2,7 +2,9 @@
   "compilerOptions": {
     "target": "es6",
     "outDir": "./dist/mjs",
-    "module": "es6"
+    "module": "es6",
+    "moduleResolution": "node",
+    "allowJs": true
   },
   "include": [
     "src"
