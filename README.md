@@ -1,6 +1,6 @@
-# wf-utils
+# wf-utils（晚风）
 
-支持 UMD/CommonJS 的工具库。
+支持 ESM/CommonJS 的工具库。
 
 **安装**
 
@@ -19,10 +19,14 @@ const {FileUtils} = require('wf-utils')
 console.log(FileUtils.formatSize(643562924))  // 613.75MB
 ```
 
-浏览器 ES6 使用样例：
+ES6 Module 使用样例：
 
 ```javascript
 import {FileUtils} from 'wf-utils'
 console.log(FileUtils.formatSize(19040))  // 18.59KB
 ```
+
+**LICENSE**
+
+MIT © [hxulin](https://github.com/hxulin)
 

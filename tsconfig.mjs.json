@@ -4,7 +4,8 @@
     "outDir": "./dist/mjs",
     "module": "es6",
     "moduleResolution": "node",
-    "allowJs": true
+    "allowJs": true,
+    "removeComments": true
   },
   "include": [
     "src"

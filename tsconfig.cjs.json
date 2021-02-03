@@ -5,7 +5,8 @@
     "module": "commonjs",
     "declaration": true,
     "moduleResolution": "node",
-    "allowJs": true
+    "allowJs": true,
+    "removeComments": true
   },
   "include": [
     "src"

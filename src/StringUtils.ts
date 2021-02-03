@@ -137,11 +137,9 @@ export class StringUtils {
      * 类似于 Java 中的 MessageFormat.format 方法
      */
     public static format(str: string, ...args: string[]): string {
-        return str.replace(/{(\d+)}/g, (match, index) => {
-            if (args.length > index) {
-                return args[index]
-            }
-            return ''
-        })
+        return str.replace(
+            /{(\d+)}/g,
+            (match, index) => (args.length > index ? args[index] : '')
+        )
     }
 }
