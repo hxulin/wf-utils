@@ -1,4 +1,4 @@
-# wf-utils（晚风）
+# wf-utils
 
 支持 ESM/CommonJS 的工具库。
 
@@ -28,5 +28,5 @@ console.log(FileUtils.formatSize(19040))  // 18.59KB
 
 **LICENSE**
 
-MIT © [hxulin](https://github.com/hxulin)
+MIT &copy; [hxulin](https://github.com/hxulin)
 
