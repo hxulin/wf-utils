@@ -99,8 +99,8 @@ export class StringUtils {
     public static isPort(str: string): boolean {
         return (
             StringUtils.isInteger(str) &&
-            parseInt(str) > 1 &&
-            parseInt(str) < 65535
+            parseInt(str) >= 1 &&
+            parseInt(str) <= 65535
         )
     }
 
