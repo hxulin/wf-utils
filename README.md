@@ -26,6 +26,10 @@ import {FileUtils} from 'wf-utils'
 console.log(FileUtils.formatSize(19040))  // 18.59KB
 ```
 
+**更多文档**
+
+[https://docs.huangxulin.cn/wf-utils/](https://docs.huangxulin.cn/wf-utils/)
+
 **LICENSE**
 
 MIT &copy; [hxulin](https://github.com/hxulin)
