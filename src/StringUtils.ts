@@ -33,6 +33,19 @@ const DomainRule = /^(?=^.{3,255}$)[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-
 const PostcodeRule = /^\d{6}$/
 
 /**
+ * 判断是否为身份证的正则表达式
+ *
+ * 第一位不可能是 0
+ * 第二位到第六位可以是 0-9
+ * 第七位到第十位是年份, 所以七八位为 19 或者 20
+ * 十一位和十二位是月份, 这两位是 01-12 之间的数值
+ * 十三位和十四位是日期, 是从 01-31 之间的数值
+ * 十五, 十六, 十七都是数字 0-9
+ * 十八位可能是数字 0-9, 也可能是 X
+ */
+const IDCardRule = /^[1-9][0-9]{5}([1][9][0-9]{2}|[2][0][0|1][0-9])([0][1-9]|[1][0|12])([0][1-9]|[1|2][0-9]|[3][0|1])[0-9]{3}([0-9]|[X])$/
+
+/**
  * 字符串工具类
  */
 export class StringUtils {
@@ -130,6 +143,33 @@ export class StringUtils {
      */
     public static isPostcode(str: string): boolean {
         return PostcodeRule.test(str)
+    }
+
+    /**
+     * 判断是否为身份证号
+     * https://blog.csdn.net/gqzydh/article/details/90295842
+     */
+    public static isIDCard(str: string): boolean {
+        if (IDCardRule.test(str)) {
+            // 加权因子
+            const weightFactor = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
+            // 校验码
+            const checkCode = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2']
+            // 最后一位字符
+            const lastChar = str[17]
+            // 前 17 位字符
+            const top17 = str.substring(0, 17)
+            // ISO 7064:1983.MOD 11-2 算法校验最后一位是否正确
+            const arr = top17.split('')
+            let num = 0
+            for (let i = 0; i < arr.length; i++) {
+                num += parseInt(arr[i]) * weightFactor[i]
+            }
+            const remainder = num % 11  // 取余
+            const checkDigit = checkCode[remainder]
+            return lastChar === checkDigit
+        }
+        return false
     }
 
     /**
