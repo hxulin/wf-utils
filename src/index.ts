@@ -1,5 +1,5 @@
 // 版本
-export const version: string = '0.0.8'
+export const version: string = '0.0.9'
 
 // AES 加解密
 export * from './AESUtils'
